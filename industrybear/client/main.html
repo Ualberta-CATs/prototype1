@@ -3,6 +3,19 @@
 </head>
 
 <body>
+  <h1>Welcome to Industry Bear!</h1>
+  {{> login}}
+</body>
+
+<template name="login">
+  <label>Username:</label>
+  <input type='text'/>
+  <label>Password:</label>
+  <input type='text'/>
+  <button>Log In</button>
+</template>
+<!--
+<body>
   <h1>Welcome to Meteor!</h1>
 
   {{> hello}}
@@ -22,4 +35,4 @@
     <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
     <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
   </ul>
-</template>
+</template> -->
