@@ -5,6 +5,7 @@
 <body>
   <h1>Welcome to Industry Bear!</h1>
   {{> login}}
+  {{> sign_up_redirect}}
 </body>
 
 <template name="login">
@@ -13,4 +14,9 @@
   <label>Password:</label>
   <input type='text'/>
   <button>Log In</button>
+</template>
+
+<template name="sign_up_redirect">
+  <!--INDUSTRYBEAR-TODO: add the link here-->
+  <h5>Don't have an account? Sign up <a href="www.google.ca">here</a>.</h5>
 </template>
