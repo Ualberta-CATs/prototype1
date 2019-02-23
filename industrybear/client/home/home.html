@@ -1,0 +1,40 @@
+<!-- Resources used
+- https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form
+- http://html5doctor.com/avoiding-common-html5-mistakes/
+- https://stackoverflow.com/questions/4526273/what-does-enctype-multipart-form-data-mean
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
+- https://stackoverflow.com/questions/18432376/what-does-for-attribute-do-in-html-label-tag
+-->
+
+<!-- TODO: adjust code for react -->
+<!-- TODO: sample posts (text and photos) - use react? -->
+<!-- TODO: sidenav and sidebar -->
+<head>
+  <title>industrybear</title>
+</head>
+
+<body>
+  <main>
+    <h1>This is the feed page!</h1>
+    {{> post-template}}
+  </main>
+</body>
+
+<!-- Post template -->
+<template name="post-template">
+  <div class="post-container">
+      <!-- TODO: specify file to upload to -->
+      <form class="post-form" enctype="multipart/form-data" action="togoPost.html" method="post">
+        <!-- TODO: max characters? -->
+        <textarea name="post-textarea" rows="8" cols="80">
+          Tell your connections what you have been up to!
+        </textarea>
+        <button type="button" name="upload-button">
+            <input type="file" name="upload-input" accept="image/*" value="Upload a photo">
+        </button>
+        <button type="submit" name="post-button">
+          Post
+        </button>
+      </form>
+  </div>
+</template>
