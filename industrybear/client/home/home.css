@@ -1,0 +1,21 @@
+html {
+  height: 2000px;
+}
+
+.upload-label {
+  cursor: pointer;
+  border: solid 1px black;
+  display: inline-block;
+}
+
+.upload-label:hover {
+  background-color: #009338;
+}
+
+#upload-photo {
+  display: inline-block;
+	height: 0.1px;
+  opacity: 0;
+  overflow:hidden;
+  width: 0.1px;
+}

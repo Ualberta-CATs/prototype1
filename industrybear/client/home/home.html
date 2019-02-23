@@ -4,6 +4,7 @@
 - https://stackoverflow.com/questions/4526273/what-does-enctype-multipart-form-data-mean
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
 - https://stackoverflow.com/questions/18432376/what-does-for-attribute-do-in-html-label-tag
+- https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
 -->
 
 <!-- TODO: adjust code for react -->
@@ -14,14 +15,11 @@
 </head>
 
 <body>
-  <main>
-    <h1>This is the feed page!</h1>
-    {{> post-template}}
-  </main>
+    {{> post}}
 </body>
 
 <!-- Post template -->
-<template name="post-template">
+<template name="post">
   <div class="post-container">
       <!-- TODO: specify file to upload to -->
       <form class="post-form" enctype="multipart/form-data" action="togoPost.html" method="post">
@@ -29,9 +27,8 @@
         <textarea name="post-textarea" rows="8" cols="80">
           Tell your connections what you have been up to!
         </textarea>
-        <button type="button" name="upload-button">
-            <input type="file" name="upload-input" accept="image/*" value="Upload a photo">
-        </button>
+            <label class="upload-label" for="upload-photo"> Upload a photo </label>
+            <input type="file" name="upload-input" accept="image/*" id="upload-photo">
         <button type="submit" name="post-button">
           Post
         </button>
