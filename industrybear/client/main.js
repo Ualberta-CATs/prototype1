@@ -1,22 +1,16 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+// import { Router } from './lib/router.js';
 
 import './main.html';
+import './templates.html';
+import './lib/router.js';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
+Meteor.startup(function(){
+    Router.addRoute('/login', 'loginTemplate');
+    Router.addRoute('/profile', 'profileTemplate');
+    Router.addRoute('/home', 'homeTemplate');
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
-
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+    console.log(Router.routes);
+    Router.run();
 });
