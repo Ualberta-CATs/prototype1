@@ -1,14 +1,5 @@
-<head>
-  <title>industrybear</title>
-</head>
-
-<body>
-  <h1>Welcome to Industry Bear!</h1>
-  {{> login}}
-  {{> sign_up_redirect}}
-</body>
-
-<template name="login">
+<template name="loginTemplate">
+  {{>banner}}
   <label>Username:</label>
   <input type='text'/>
   <label>Password:</label>

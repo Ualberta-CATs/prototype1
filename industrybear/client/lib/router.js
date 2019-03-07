@@ -52,11 +52,6 @@ Router = {
 run: function(){
   var route = this.getMatchingRoute();
   if (route) {
-      // var fragment = Blaze.render(function() {
-      //     if (Template[route.template] !== undefined) {
-      //          return Template[route.template](route.data);
-      //     }
-      // });
       var fragment = Blaze.render(function(){
           if (Template[route.template] !== undefined) {
             return Template[route.template];
