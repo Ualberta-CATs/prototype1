@@ -10,28 +10,14 @@
 <!-- TODO: adjust code for react -->
 <!-- TODO: sample posts (text and photos) - use react? -->
 <!-- TODO: sidenav and sidebar -->
-<head>
-  <title>industrybear</title>
-</head>
 
-<body>
-    {{> post}}
-</body>
 
-<!-- Post template -->
-<template name="post">
-  <div class="post-container">
-      <!-- TODO: specify file to upload to -->
-      <form class="post-form" enctype="multipart/form-data" action="togoPost.html" method="post">
-        <!-- TODO: max characters? -->
-        <textarea name="post-textarea" rows="8" cols="80">
-          Tell your connections what you have been up to!
-        </textarea>
-            <label class="upload-label" for="upload-photo"> Upload a photo </label>
-            <input type="file" name="upload-input" accept="image/*" id="upload-photo">
-        <button type="submit" name="post-button">
-          Post
-        </button>
-      </form>
-  </div>
-</template>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="root">
+      <!--Root here-->
+    </div>
+  </body>
