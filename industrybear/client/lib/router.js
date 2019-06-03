@@ -1,66 +1,19 @@
-//Reference: https://code.tutsplus.com/tutorials/creating-a-multi-page-site-with-meteor--net-31849
+import React from 'react';
+import { Router, Route, Switch } from 'react-router';
+import createBrowserHistory from 'history/createBrowserHistory';
 
-Router = {
-  //FIXME-industrybear: remove reference to localhost
-	uri: _.compact(window.location.pathname.split("/")),
-	routes: [],
-  addRoute: function(route, template) {
-  	var segments =  _.compact(route.split("/"));
+import {Home} from '../home/home.js';
+import {Login} from '../login/login.js';
+import {Connect} from '../connect/connect.js';
 
-  	var placeholders = _.reduce(segments, function(currentArr, piece, index) {
-  		if (piece.substr(0, 1) === ":") {
-  			currentArr.push(index);
-  			segments[index] = piece.substr(1);
-  		}
-  		return currentArr;
-  	}, []);
+const browserHistory = createBrowserHistory();
 
-  	this.routes.push({
-  		segments: segments,
-  		template: template,
-  		placeholderIndexes: placeholders
-  	});
-  },
-  getMatchingRoute: function(){
-     for (var i in this.routes) {
-         var route = this.routes[i];
-         var data = {};
-
-        if (route.segments.length === this.uri.length) {
-        // if (route.length === this.uri.length) {
-             var match = _.every(route.segments, function(seg, i){
-                  if (_.contains(route.placeholderIndexes, i)) {
-                       data[seg] = this.uri[i];
-                       return true;
-                  } else {
-                       return seg === this.uri[i];
-                  }
-             }, this);
-
-             if (match) {
-                  return {
-                      data: data,
-                      template: route.template
-                  }
-             }
-        }
-    }
-    //no matches
-    console.log('there were no matches')
-    return false;
-},
-run: function(){
-  var route = this.getMatchingRoute();
-  if (route) {
-      var fragment = Blaze.render(function(){
-          if (Template[route.template] !== undefined) {
-            return Template[route.template];
-          }
-        }, document.body);
-
-      document.body.appendChild(fragment);
-  } else {
-      //TODO: 404
-  }
-}
-};
+export const renderRoutes = () => (
+  <Router history={browserHistory}>
+    <Switch>
+      <Route exact path="/" component={Home}/>
+      <Route exact path="/login" component={Login}/>
+      <Route exact path="/connect" component={Connect}/>
+    </Switch>
+  </Router>
+);
