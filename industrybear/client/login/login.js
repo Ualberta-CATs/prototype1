@@ -5,7 +5,7 @@ import "./login.html"
 export default class Login extends Component {
   render() {
     return (
-      <div>{login-template}</div>
+      <div>hello from the login page</div>
     );
   }
 }

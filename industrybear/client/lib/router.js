@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router';
-import  createBrowserHistory  from 'history/createBrowserHistory';
+// import  createBrowserHistory  from 'history/createBrowserHistory';
+import {createBrowserHistory} from 'history';
 import {Home} from '../home/home.js';
 import {Login} from '../login/login.js';
 import {Connect} from '../connect/connect.js';
