@@ -9,6 +9,8 @@ import {Connect} from '../connect/connect.js';
 const browserHistory = createBrowserHistory();
 
 export const renderRoutes = () => (
+  <div>
+  <h1>the router yo</h1>
   <Router history={browserHistory}>
     <Switch>
       <Route exact path="/" component={Home}/>
@@ -16,4 +18,5 @@ export const renderRoutes = () => (
       <Route exact path="/connect" component={Connect}/>
     </Switch>
   </Router>
+  </div>
 );

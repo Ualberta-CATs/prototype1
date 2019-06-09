@@ -6,8 +6,6 @@ export default class Connect extends Component {
   render() {
     return (
       <h1>Here is the connect page!</h1>
-      // <div>{{connectTemplate}}</div>
-      // <div>{connct-template}</div>
     );
   }
 }
